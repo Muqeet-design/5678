@@ -488,26 +488,21 @@ const petals = document.getElementById("petals");
 
 function createPetal(){
 
-const petal=document.createElement("div");
+    const petal = document.createElement("div");
+    petal.className = "petal";
 
-petal.className="petal";
+    petal.style.left = Math.random() * 100 + "vw";
+    petal.style.animationDuration = (4 + Math.random() * 4) + "s";
 
-petal.style.left=Math.random()*100+"vw";
+    document.body.appendChild(petal);
 
-petal.style.animationDuration=
-(6+Math.random()*5)+"s";
-
-petals.appendChild(petal);
-
-setTimeout(()=>{
-
-petal.remove();
-
-},12000);
+    setTimeout(()=>{
+        petal.remove();
+    },8000);
 
 }
 
-setInterval(createPetal,500);
+setInterval(createPetal,300);
 
 // ======================
 // Sparkles
