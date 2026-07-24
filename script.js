@@ -258,13 +258,19 @@ function startGallery(){
 
     galleryIndex = 0;
 
-    showGallery();
+    galleryImage.src = gallery[0].image;
+    galleryTitle.textContent = gallery[0].title;
+    galleryDescription.textContent = gallery[0].text;
+
+    galleryImage.classList.remove("photoOut");
+    galleryImage.classList.add("photoIn");
 
     clearInterval(galleryTimer);
 
-    galleryTimer = setInterval(nextGallery, 5000);
+    galleryTimer = setInterval(nextGallery,5000);
 
 }
+
 
 function nextGallery(){
 
@@ -318,9 +324,11 @@ function showGallery(){
 
         galleryImage.classList.add("photoIn");
 
-        galleryImage.classList.remove("photoIn");
-        void galleryImage.offsetWidth;
-        galleryImage.classList.add("photoIn");
+        galleryImage.classList.remove("photoOut");
+
+void galleryImage.offsetWidth;
+
+galleryImage.classList.add("photoIn");
 
         isAnimating = false;
 
