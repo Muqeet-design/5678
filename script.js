@@ -314,11 +314,16 @@ function showGallery(){
 
         galleryImage.classList.add("photoIn");
 
+        galleryImage.classList.remove("photoIn");
+        void galleryImage.offsetWidth;
+        galleryImage.classList.add("photoIn");
+
         isAnimating = false;
 
     },500);
 
 }
+
 
 
 
@@ -542,25 +547,6 @@ heart.style.transform="scale(1)";
 
 },1800);
 
-// ======================
-// Auto Gallery (Optional)
-// ======================
-
-setInterval(()=>{
-
-if(document.getElementById("galleryPage").classList.contains("active")){
-
-if(galleryIndex<gallery.length-1){
-
-galleryIndex++;
-
-showGallery();
-
-}
-
-}
-
-},7000);
 
 // ======================
 // Keyboard Shortcuts
