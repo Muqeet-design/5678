@@ -865,45 +865,45 @@ animation:photoIn .6s ease forwards;
 
 }
 
+
 @keyframes photoOut{
 
 0%{
-
 opacity:1;
-
-transform:rotate(0deg) scale(1);
-
+transform:translateX(0) rotate(0deg) scale(1);
+filter:blur(0);
 }
 
 100%{
-
 opacity:0;
-
-transform:translateX(-80px) rotate(-8deg) scale(.9);
-
+transform:translateX(-120px) rotate(-12deg) scale(.85);
+filter:blur(6px);
 }
 
 }
+
 
 @keyframes photoIn{
 
 0%{
-
 opacity:0;
+transform:translateX(120px) rotate(12deg) scale(.85);
+filter:blur(6px);
+}
 
-transform:translateX(80px) rotate(8deg) scale(.9);
-
+40%{
+opacity:1;
+filter:blur(0);
 }
 
 100%{
-
 opacity:1;
-
 transform:translateX(0) rotate(0deg) scale(1);
-
+filter:blur(0);
 }
 
 }
+
 
 .caption{
 
