@@ -267,7 +267,7 @@ function startGallery(){
 
     clearInterval(galleryTimer);
 
-    galleryTimer = setInterval(nextGallery,5000);
+    galleryTimer = setInterval(nextGallery,3500);
 
 }
 
@@ -351,7 +351,7 @@ clearInterval(galleryTimer);
 
 nextGallery();
 
-galleryTimer = setInterval(nextGallery,5000);
+galleryTimer = setInterval(nextGallery,3500);
 
 };
 
