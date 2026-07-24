@@ -353,7 +353,7 @@ text-align:center;
     max-width:450px;
     height:600px;
     object-fit:contain;
-    background: #ffd6e7;   /* light pink */
+    background: #fff;
     border-radius:20px;
     box-shadow:0 20px 40px rgba(0,0,0,.45);
 }
@@ -391,7 +391,7 @@ margin-bottom:10px;
 
 }
 
-#galleryDescription{
+;#galleryDescription{
 
 font-size:18px;
 
