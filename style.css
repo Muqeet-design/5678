@@ -265,13 +265,23 @@ transform:rotateX(180deg);
 
 .tap{
 
-margin-top:30px;
+    position:absolute;
 
-font-size:18px;
+    left:50%;
 
-color:#444;
+    top:calc(50% + 120px);
 
-font-weight:600;
+    transform:translateX(-50%);
+
+    width:100%;
+
+    text-align:center;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    color:#444;
 
 }
 
