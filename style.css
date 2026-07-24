@@ -332,7 +332,14 @@ Gallery
 
 #galleryPage{
 
-background:#111;
+
+#galleryPage{
+
+    background:linear-gradient(135deg,#fff6dc,#ffe8b6);
+
+    overflow:hidden;
+
+    position:relative;
 
 }
 
