@@ -707,23 +707,24 @@ z-index:999;
 /* =========================
 Sparkles
 ========================= */
-
 .sparkle{
 
-position:absolute;
+    position:fixed;
 
-width:6px;
-height:6px;
+    width:6px;
+    height:6px;
 
-border-radius:50%;
+    background:white;
 
-background:white;
+    border-radius:50%;
 
-box-shadow:0 0 12px white;
+    box-shadow:0 0 15px white;
 
-animation:sparkle 2s linear forwards;
+    pointer-events:none;
 
-pointer-events:none;
+    z-index:9999;
+
+    animation:sparkle 2s linear forwards;
 
 }
 
