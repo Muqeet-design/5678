@@ -247,6 +247,7 @@ gallery.forEach(item => {
 });
 
 let galleryIndex=0;
+let isAnimating = false;
 
 // ======================
 // Gallery Function
@@ -266,6 +267,10 @@ function startGallery(){
 }
 
 function nextGallery(){
+
+    if(isAnimating) return;
+
+    isAnimating = true;
 
     galleryIndex++;
 
@@ -291,7 +296,6 @@ function nextGallery(){
 
 }
 
-
 function showGallery(){
 
     galleryImage.classList.remove("photoIn","photoOut");
@@ -310,9 +314,13 @@ function showGallery(){
 
         galleryImage.classList.add("photoIn");
 
-    },450);
+        isAnimating = false;
+
+    },500);
 
 }
+
+
 
 // ======================
 // Next Photo
