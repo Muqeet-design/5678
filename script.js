@@ -240,67 +240,87 @@ text:"Some flowers bloom once, but their beauty is remembered forever."
 
 ];
 
+// Preload Gallery Images
+gallery.forEach(item => {
+    const img = new Image();
+    img.src = item.image;
+});
+
 let galleryIndex=0;
 
 // ======================
 // Gallery Function
 // ======================
+let galleryTimer;
 
 function startGallery(){
 
-galleryIndex=0;
+    galleryIndex = 0;
 
-showGallery();
+    showGallery();
+
+    clearInterval(galleryTimer);
+
+    galleryTimer = setInterval(nextGallery, 3000);
+
+}
+
+function nextGallery(){
+
+    galleryIndex++;
+
+    if(galleryIndex >= gallery.length){
+
+        clearInterval(galleryTimer);
+
+        galleryMusic.pause();
+
+        bgMusic.currentTime = 0;
+
+        bgMusic.play().catch(()=>{});
+
+        showPage("skyPage");
+
+        createStars();
+
+        return;
+
+    }
+
+    showGallery();
 
 }
 
 function showGallery(){
 
-galleryImage.style.opacity=0;
+    galleryImage.style.opacity = 0;
 
-setTimeout(()=>{
+    setTimeout(()=>{
 
-galleryImage.src=gallery[galleryIndex].image;
+        galleryImage.src = gallery[galleryIndex].image;
 
-galleryTitle.innerHTML=gallery[galleryIndex].title;
+        galleryTitle.innerHTML = gallery[galleryIndex].title;
 
-galleryDescription.innerHTML=gallery[galleryIndex].text;
+        galleryDescription.innerHTML = gallery[galleryIndex].text;
 
-galleryImage.style.opacity=1;
+        galleryImage.style.opacity = 1;
 
-galleryImage.style.animation="kenburns 8s linear";
-
-},300);
+    },300);
 
 }
-
 // ======================
 // Next Photo
 // ======================
 
-nextPhoto.onclick=()=>{
+nextPhoto.onclick = ()=>{
 
 playClick();
 
-galleryIndex++;
+clearInterval(galleryTimer);
 
-if(galleryIndex<gallery.length){
+nextGallery();
 
-showGallery();
-
-}else{
-
-galleryMusic.pause();
-
-bgMusic.currentTime=0;
-
-bgMusic.play().catch(()=>{});
-
-showPage("skyPage");
-
-createStars();
-
-}
+galleryTimer = setInterval(nextGallery,3000);
 
 };
 
