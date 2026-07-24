@@ -290,38 +290,54 @@ function nextGallery(){
     showGallery();
 
 }
+
 function showGallery(){
 
-    const nextImage = new Image();
+    const img = new Image();
+    img.src = gallery[galleryIndex].image;
 
-    nextImage.src = gallery[galleryIndex].image;
+    img.onload = function(){
 
-    nextImage.onload = function(){
+        galleryImage.animate([
+            {
+                opacity:1,
+                transform:"translateX(0) scale(1)"
+            },
+            {
+                opacity:0,
+                transform:"translateX(-40px) scale(.97)"
+            }
+        ],{
+            duration:300,
+            fill:"forwards"
+        }).onfinish = ()=>{
 
-        galleryImage.style.opacity = "0";
-        galleryImage.style.transform = "translateX(-50px)";
-
-        setTimeout(()=>{
-
-            galleryImage.src = nextImage.src;
+            galleryImage.src = img.src;
 
             galleryTitle.textContent = gallery[galleryIndex].title;
             galleryDescription.textContent = gallery[galleryIndex].text;
 
-            galleryImage.style.transform = "translateX(50px)";
-
-            requestAnimationFrame(()=>{
-
-                galleryImage.style.opacity = "1";
-                galleryImage.style.transform = "translateX(0)";
-
+            galleryImage.animate([
+                {
+                    opacity:0,
+                    transform:"translateX(40px) scale(1.03)"
+                },
+                {
+                    opacity:1,
+                    transform:"translateX(0) scale(1)"
+                }
+            ],{
+                duration:450,
+                fill:"forwards"
             });
 
-        },200);
+        };
 
     };
 
 }
+
+
 // ======================
 // Next Photo
 // ======================
