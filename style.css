@@ -341,7 +341,7 @@ text-align:center;
     height: 600px;
     object-fit: cover;
     object-fit: contain;
-background: #111;
+background:linear-gradient(135deg,#fff3dc,#ffe6b8)
     border-radius: 20px;
     box-shadow: 0 20px 40px rgba(0,0,0,.45);
 }
