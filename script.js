@@ -124,15 +124,7 @@ const stories=[
 
 "This little website is simply a wish that your future remains bright and full of happiness.",
 
-`I know you've blocked me and you don't want to talk right now.
-
-And I completely respect your space.
-
-But I want to talk with you.
-
-I had genuine feelings for you.
-
-I never meant to annoy or upset you.`
+"I know you've blocked me and you don't want to talk right now.And I completely respect your space.But I want to talk with you.I had genuine feelings for you.I never meant to annoy or upset you."
 
 ];
 
