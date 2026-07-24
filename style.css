@@ -346,12 +346,30 @@ background: #111;
     box-shadow: 0 20px 40px rgba(0,0,0,.45);
 }
 
-.caption{
+.caption h2,
+.caption p{
 
-margin-top:25px;
+transition:
+opacity .6s ease,
+transform .6s ease;
+
+opacity:1;
+
+transform:translateY(0);
 
 }
 
+.caption h2{
+
+transition-delay:.1s;
+
+}
+
+.caption p{
+
+transition-delay:.2s;
+
+}
 #galleryTitle{
 
 font-size:34px;
