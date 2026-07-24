@@ -291,52 +291,28 @@ function nextGallery(){
 
 }
 
+
 function showGallery(){
 
-    const img = new Image();
-    img.src = gallery[galleryIndex].image;
+    galleryImage.classList.remove("photoIn","photoOut");
 
-    img.onload = function(){
+    galleryImage.classList.add("photoOut");
 
-        galleryImage.animate([
-            {
-                opacity:1,
-                transform:"translateX(0) scale(1)"
-            },
-            {
-                opacity:0,
-                transform:"translateX(-40px) scale(.97)"
-            }
-        ],{
-            duration:300,
-            fill:"forwards"
-        }).onfinish = ()=>{
+    setTimeout(()=>{
 
-            galleryImage.src = img.src;
+        galleryImage.src = gallery[galleryIndex].image;
 
-            galleryTitle.textContent = gallery[galleryIndex].title;
-            galleryDescription.textContent = gallery[galleryIndex].text;
+        galleryTitle.textContent = gallery[galleryIndex].title;
 
-            galleryImage.animate([
-                {
-                    opacity:0,
-                    transform:"translateX(40px) scale(1.03)"
-                },
-                {
-                    opacity:1,
-                    transform:"translateX(0) scale(1)"
-                }
-            ],{
-                duration:450,
-                fill:"forwards"
-            });
+        galleryDescription.textContent = gallery[galleryIndex].text;
 
-        };
+        galleryImage.classList.remove("photoOut");
 
-    };
+        galleryImage.classList.add("photoIn");
+
+    },450);
 
 }
-
 
 // ======================
 // Next Photo
