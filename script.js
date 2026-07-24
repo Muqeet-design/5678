@@ -297,6 +297,10 @@ function nextGallery(){
 }
 
 function showGallery(){
+    
+    if(galleryIndex === 0){
+    return;
+    }
 
     galleryImage.classList.remove("photoIn","photoOut");
 
