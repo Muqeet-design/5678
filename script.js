@@ -290,22 +290,36 @@ function nextGallery(){
     showGallery();
 
 }
-
 function showGallery(){
 
-    galleryImage.style.opacity = 0;
+    const nextImage = new Image();
 
-    setTimeout(()=>{
+    nextImage.src = gallery[galleryIndex].image;
 
-        galleryImage.src = gallery[galleryIndex].image;
+    nextImage.onload = function(){
 
-        galleryTitle.innerHTML = gallery[galleryIndex].title;
+        galleryImage.style.opacity = "0";
+        galleryImage.style.transform = "translateX(-50px)";
 
-        galleryDescription.innerHTML = gallery[galleryIndex].text;
+        setTimeout(()=>{
 
-        galleryImage.style.opacity = 1;
+            galleryImage.src = nextImage.src;
 
-    },300);
+            galleryTitle.textContent = gallery[galleryIndex].title;
+            galleryDescription.textContent = gallery[galleryIndex].text;
+
+            galleryImage.style.transform = "translateX(50px)";
+
+            requestAnimationFrame(()=>{
+
+                galleryImage.style.opacity = "1";
+                galleryImage.style.transform = "translateX(0)";
+
+            });
+
+        },200);
+
+    };
 
 }
 // ======================
